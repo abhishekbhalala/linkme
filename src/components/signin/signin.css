@@ -1,0 +1,25 @@
+.signin_head{
+    color: black;
+    align-items: center;
+    text-align: center;
+}
+.email{
+    align-items: center;
+    text-align: center;
+    }
+ .etext{
+     text-align: left;
+     align-items: left;
+     margin-bottom: 10px;
+ }   
+ .btn-primary{
+ background-color: #8f9ddf;
+ width: 200px;
+ margin-bottom: 10px;
+ }
+
+ .join_now:hover{
+ cursor: pointer;
+ background-color: #8f9ddf;
+ color: white;
+ }

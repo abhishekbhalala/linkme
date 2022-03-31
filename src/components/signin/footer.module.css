@@ -1,0 +1,106 @@
+.sectiondata{
+    max-width: 1128px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: beige;
+}
+.footerdata{
+    padding-bottom: 22px;
+    padding-top: 24px;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+}
+.img{
+    width: 110px;
+    height: 80px;
+}
+.imgspc{
+    padding-left: 16px;
+    justify-content: flex-end;
+    width: 100%;
+    display: flex;
+}
+.footer_heading{
+    max-width: 192px;
+    width: 100%;
+    margin-right: 24px;
+}
+.footer_content{
+    text-align: left;
+    list-style: none;
+}
+
+.heading_content{
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.25;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bottom{
+    background-color: transparent;
+    width: 100%;
+}
+
+.footer_list{
+    flex-wrap: wrap;
+    height: auto;
+    -webkit-box-pack: start;
+    display: flex;
+    justify-content: flex-start;
+    min-height: 50px;
+    margin: 0 auto;
+    width: 1128px;
+}
+
+.footer_item{
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+    display: flex;
+    flex-shrink: 0;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+}
+
+.sronly{
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+    height: 1px !important;
+}
+
+.copytext{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    word-break: break-word;
+    
+    color: rgba(0,0,0,0.75);
+    display: inline-block;
+    -ms-flex-item-align: center;
+    align-self: center;
+    height: 14px;
+    width: 56px;
+    margin-right: 8px;
+}
+
+.footer_itemlist{
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    font-weight: 400;
+    color: rgba(0,0,0,0.6);
+    display: flex;
+    flex-shrink: 0;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+}
