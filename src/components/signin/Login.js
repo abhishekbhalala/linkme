@@ -43,6 +43,9 @@ const Login = () => {
         <Link to="/signin">
           <p className="signin">SignIn</p>
         </Link>
+        <Link to='/logout'>
+          Signout
+        </Link>
       </div>
       <div className="mainsection">
         <div className="section_content">

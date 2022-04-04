@@ -1,24 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FindPerson.module.css';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 const Peoplepage = () => {
 
 const [isdropdown,setIsdropdown]=useState(false);
- const [isshown,setIsshown]=useState(false);
+const ref=useRef();
 
   const peopledropdownclick=()=>{
-    setIsdropdown(!isdropdown)
+    setIsdropdown(!isdropdown)   
     console.log('isdropdown',isdropdown)
   }
-  const backdropclick=()=>{
-     setIsshown(isshown); 
-    console.log('backdrop',isshown)
-  }
+ 
 
   useEffect(()=>{
-    document.addEventListener('mousedown',backdropclick)
-  },[backdropclick])
+    const backdropclick=(e)=>{
+      if(isdropdown&&ref.current&&!ref.current.contains(e.target)){
+        setIsdropdown(false)
+      }
+      console.log('backdrop',isdropdown)
+    }
+    document.addEventListener('click',backdropclick);
+    return()=>{
+      document.removeEventListener('click',backdropclick)
+    }
+  },[isdropdown])
  
   return (
     <>
@@ -49,7 +55,7 @@ People
 
     <ArrowDropDownIcon className={styles.iconarrow} onClick={peopledropdownclick}/>
          </button>
-         <div className={styles.switcher_tab}>{ isdropdown && 
+         <div className={styles.switcher_tab}  ref={ref}>{ isdropdown && 
     <ul className={styles.switcher_tab_list}>
     <li className={styles.switcher_tab_list_active}>
       <button className={styles.switcher_tab_button}>

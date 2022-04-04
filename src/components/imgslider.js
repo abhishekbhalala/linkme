@@ -1,7 +1,7 @@
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import { useTheme } from "@material-ui/core/styles";
-import React from "react";
+import React, { useState } from "react";
 
 const MyCollection = [
   {
@@ -26,7 +26,7 @@ const MyCollection = [
 const Imgslider = () => {
   const CollectionSize = MyCollection.length;
   const theme = useTheme();
-  const [index, setActiveStep] = React.useState(0);
+  const [index, setActiveStep] = useState(0);
 
   const goToNextPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);

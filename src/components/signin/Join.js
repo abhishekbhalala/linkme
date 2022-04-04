@@ -7,9 +7,11 @@ const Join = () => {
 const emailRef=useRef(null);
   const passwordRef=useRef(null);
 
-    const history=useHistory()
+    const history=useHistory();
+
 const signup=(e)=>{
   e.preventDefault();
+  history.push('/')
     auth.createUserWithEmailAndPassword(
       emailRef.current.value,
       passwordRef.current.value
@@ -35,7 +37,7 @@ const signup=(e)=>{
             <label htmlFor="password">Password</label><br/>
             <input className='joinnow' ref={passwordRef} type='password'></input><br/>
             <p className='text'>By clicking Agree & Join, you agree to the LinkedIn User<br/> Agreement, Privacy Policy, and Cookie Policy.</p>
-            <button className='joinnow_button' onClick={signup}>Join Now</button><br/>
+          <div> <button className='joinnow_button' onClick={signup}>Join Now</button><br/></div>
                 <span className='already'>Already on LinkedIn?</span>
                 <span className='signin' onClick={()=>history.push('/signin')}>SignIn</span>
         </form>

@@ -12,14 +12,42 @@ import Learning from './components/Learning';
 import Signin from './components/signin/Signin'
 import Join from './components/signin/Join';
 import Login from './components/signin/Login';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from './firebase';
+import { login, logout, selectUser } from './features/userSlice';
+import { useEffect } from 'react';
+import Logout from './components/signin/Logout';
+
 
 function App() {
+  const user=useSelector(selectUser)
+
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    const unsub=auth.onAuthStateChanged((userAuth)=>{
+         if(userAuth){
+           //login
+           dispatch(login({
+             uid:userAuth.uid,
+             email:userAuth.email
+           }))
+         }else{
+           //logout
+           dispatch(logout())
+   
+         }
+       }) 
+       return unsub;
+     },[dispatch])
   return (
     <div >
       <Router>
-        <Switch>
+        
+         
+       <Switch>
           <Route exact path='/'> 
-          <Login/>       
+          <Login/>
           </Route>
         <Route path='/home'>
             <Home/>
@@ -38,6 +66,9 @@ function App() {
           </Route>
           <Route path='/learning'>
             <Learning/>
+          </Route>
+          <Route path='/logout'>
+            <Logout/>
           </Route>
         </Switch>
       </Router>   

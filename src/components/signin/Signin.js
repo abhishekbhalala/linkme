@@ -10,6 +10,7 @@ const Signin = () => {
   const history = useHistory();
 
   const login=(e)=>{
+    history.push('/')
     e.preventDefault()
     auth.signInWithEmailAndPassword(
       emaiRef.current.value,
